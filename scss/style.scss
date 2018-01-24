@@ -1,0 +1,179 @@
+@import "components/_mixins.scss";
+@import "components/_flexbox.scss";
+// fonts
+@font-face {
+  font-family: "ocr-fonts";
+  src: url("../fonts/ocr_regular.ttf");
+}
+// primary color
+$primary_color: #b8005f;
+// secondry color
+$secondry_color: #000;
+// primary font family
+$primary_font: ocr-fonts;
+// vertical center
+.ver-cen-out {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.ver-cen-inn {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+// main styling
+
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: $primary_font;
+  margin: 0;
+}
+// header
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+}
+.header {
+  .header-inner {
+    min-height: 100px;
+    padding: 15px 25px;
+    background: rgba(0, 0, 0, 0.5);
+    @include flexbox();
+    @include align_items_CenterStretch(center);
+  }
+  .left, .right {
+    float: left;
+  }
+  .left {
+    width: 30%;
+    a {
+      display: table;
+    }
+    img {
+      width: 210px;
+    }
+  }
+  .right {
+    width: 70%;
+    > ul {
+      margin: 0;
+      padding: 0;
+      float: right;
+      > li {
+          padding: 0;
+          float: left;
+        > a {
+          color: #fff;
+          font-family: ocr-fonts;
+          font-size: 30px;
+          text-decoration: none;
+          padding: 16px 15px 12px 15px;
+          display: block;
+          @include transition();
+          &:hover {
+            background-color: #B8005F;
+          }
+        }
+        &.active a {
+          background-color: #B8005F;
+        }
+      }
+    }
+  }
+}
+
+
+
+// slider
+.my-slider {
+  position: relative;
+  .controlls {
+    > div {
+      position: absolute;
+      height: 70px;
+      width: 45px;
+      top: 0;
+      background-repeat: no-repeat;
+      background-size: 40px;
+      top: 45%;
+      cursor: pointer;
+      @include transition();
+      &.notfound {
+        filter: grayscale(81%);
+        cursor: default;
+      }
+    }
+  }
+  .prev {
+    background: url("../images/left-arrow.png");
+    left: 20px;
+    &:hover {
+      left: 15px;
+    }
+  }
+  .next {
+    background: url("../images/right-arrow.png");
+    right: 20px;
+    &:hover {
+      right: 15px;
+    }
+  }
+}
+.slider-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  .item {
+    white-space: normal;
+    width: 100%;
+    display: none;
+    margin-right: -4px;
+    position: relative;
+    &.active {
+      display: inline-block;
+    }
+    .caption {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+    }
+    .caption-inner {
+      @include tabb;
+      margin-left: 9%;
+      width: 400px;
+      p {
+        font-family: $primary_font;
+        font-size: 55px;
+        text-transform: uppercase;
+        color: $primary_color;
+        margin: 0 auto 20px;
+        @include tabb;
+      }
+      .btn {
+        font-family: $primary_font;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: $primary_color;
+        border-radius: 0;
+        border-color: $primary_color;
+        margin: auto;
+        padding: 11px 10px 5px;
+        @include tabb;
+        @include transition;
+        &:hover {
+          background-color: $secondry_color;
+        }
+      }
+    }
+  }
+}
