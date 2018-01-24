@@ -1,0 +1,10 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+RewriteBase /beautyplus/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html?/$1 [L]
+
+#RewriteRule ^ghost.html$ sam.html [L]
