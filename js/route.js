@@ -1,5 +1,5 @@
 // main routing
-app.config(['$routeProvider', '$locationProvider', function() {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $routeProvider.when('/home', {
@@ -10,7 +10,8 @@ app.config(['$routeProvider', '$locationProvider', function() {
     templateUrl: 'views/contact.html'
   }).when('/services', {
     templateUrl: 'views/services.html'
-  })otherwise({
+  }).otherwise({
     redirectTo: '/home'
   });
+
 }]);
