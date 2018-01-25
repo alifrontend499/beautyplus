@@ -14,16 +14,19 @@
     <header ng-include="'include/header.html'"></header>
     <!-- haeader End -->
 
-    <main id="main" ng-view>
+    <!-- main start -->
+    <main id="main" ng-view></main>
+    <!-- main end -->
 
-    </main>
-
+    <!-- footer Start -->
+    <footer ng-include="'include/footer.html'"></footer>
+    <!-- footer End -->
 
 
     <!-- linking jquery -->
     <script src="js/lib/jquery/jquery.js"></script>
     <!-- linking bootstrap -->
-    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/framework/bootstrap/bootstrap.min.js"></script>
     <!-- linking angular -->
     <script src="js/framework/angular/angular.min.js"></script>
     <!-- linking Angularapp js -->
@@ -32,10 +35,11 @@
     <script src="js/route.js"></script>
     <!-- linking Angularapp js main controller-->
     <script src="js/controller/main-controller.js"></script>
+    <!-- linking Angularapp js operations controller-->
+    <script src="js/controller/js-operations.js"></script>
     <!-- linking angular services-->
     <script src="js/framework/angular/services/angular-route.min.js"></script>
     <script src="js/framework/angular/services/angular-animate.min.js"></script>
-
     </script>
   </body>
 </html>

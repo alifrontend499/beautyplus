@@ -16,9 +16,14 @@
 
 .ver-cen-inn { display: table-cell; vertical-align: middle; }
 
+.main-heading { font-family: ocr-fonts; font-size: 40px; text-align: center; margin: 20px 0 15px; }
+.main-heading:after { content: ''; display: table; height: 5px; width: 190px; background: #b8005f; margin: auto; }
+
+.main-small-heading { font-family: ocr-fonts; font-size: 20px; text-align: center; }
+
 * { box-sizing: border-box; }
 
-body { font-family: ocr-fonts; margin: 0; }
+body { font-family: ocr-fonts; margin: 0; overflow-x: hidden; }
 
 header { position: fixed; z-index: 999; width: 100%; left: 0; }
 
@@ -42,13 +47,29 @@ header { position: fixed; z-index: 999; width: 100%; left: 0; }
 .my-slider .next { background: url("../images/right-arrow.png"); right: 20px; }
 .my-slider .next:hover { right: 15px; }
 
-.slider-wrapper { white-space: nowrap; overflow: hidden; width: 100%; -webkit-user-select: none; user-select: none; }
-.slider-wrapper .item { white-space: normal; width: 100%; display: none; margin-right: -4px; position: relative; }
+.slider-wrapper { white-space: nowrap; overflow: hidden; width: 100%; -webkit-user-select: none; user-select: none; font-size: 0; }
+.slider-wrapper .item { white-space: normal; width: 100%; display: none; margin-right: -4px; position: relative; font-size: 14px; }
 .slider-wrapper .item.active { display: inline-block; }
 .slider-wrapper .item .caption { position: absolute; height: 100%; width: 100%; top: 0; }
 .slider-wrapper .item .caption-inner { display: table; margin-left: 9%; width: 400px; }
 .slider-wrapper .item .caption-inner p { font-family: ocr-fonts; font-size: 55px; text-transform: uppercase; color: #b8005f; margin: 0 auto 20px; display: table; }
 .slider-wrapper .item .caption-inner .btn { font-family: ocr-fonts; font-size: 20px; text-transform: uppercase; color: #fff; background-color: #b8005f; border-radius: 0; border-color: #b8005f; margin: auto; padding: 11px 10px 5px; display: table; -webkit-transition: 0.3s; -ms-transition: 0.3s; transition: 0.3s; }
 .slider-wrapper .item .caption-inner .btn:hover { background-color: #000; }
+
+#main.ng-enter { transition: 1s; opacity: 0; transform: translateX(100%); }
+
+#main.ng-enter-active { animation-name: leftRightPop; animation-duration: 1s; animation-timing-function: ease-in-out; }
+
+@keyframes leftRightPop { 0% { opacity: 0; transform: translateX(100%); }
+  55% { opacity: 0.5; transform: translateX(0%); }
+  75% { opacity: 0.9; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0%); } }
+.footer-inner { padding: 24px 25px 20px; background: #000; }
+.footer-inner p { color: #fff; margin: 0; font-size: 16px; }
+
+.all-products { padding: 0 25px; }
+.all-products > ul { list-style: none; margin: 0; padding-left: 0; }
+.all-products > ul > li { display: inline-block; margin-right: -4px; vertical-align: top; }
+.all-products .product-main { background-color: #b8005f; }
 
 /*# sourceMappingURL=style.css.map */

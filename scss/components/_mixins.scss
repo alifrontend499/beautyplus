@@ -14,3 +14,13 @@
     width: 100%;
   }
 }
+@mixin ulDefault () {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+@mixin inlineBlock ($verticalAlign: top) {
+  display: inline-block;
+  margin-right: -4px;
+  vertical-align: $verticalAlign;
+}

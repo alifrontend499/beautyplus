@@ -21,7 +21,27 @@ $primary_font: ocr-fonts;
   display: table-cell;
   vertical-align: middle;
 }
+// main heading
+.main-heading {
+  font-family: $primary_font;
+  font-size: 40px;
+  text-align: center;
+  margin: 20px 0 15px;
+  &:after {
+    content: '';
+    display: table;
+    height: 5px;
+    width: 190px;
+    background: $primary_color;
+    margin: auto;
+  }
+}
 
+.main-small-heading {
+  font-family: $primary_font;
+  font-size: 20px;
+  text-align: center;
+}
 
 // main styling
 
@@ -31,8 +51,9 @@ $primary_font: ocr-fonts;
 body {
   font-family: $primary_font;
   margin: 0;
+  overflow-x: hidden;
 }
-// header
+// header start
 header {
   position: fixed;
   z-index: 999;
@@ -87,10 +108,9 @@ header {
     }
   }
 }
+// header end
 
-
-
-// slider
+// slider start
 .my-slider {
   position: relative;
   .controlls {
@@ -131,12 +151,14 @@ header {
   width: 100%;
   -webkit-user-select: none;
   user-select: none;
+  font-size: 0;
   .item {
     white-space: normal;
     width: 100%;
     display: none;
     margin-right: -4px;
     position: relative;
+    font-size: 14px;
     &.active {
       display: inline-block;
     }
@@ -177,3 +199,61 @@ header {
     }
   }
 }
+// slider end
+
+// main section animation css start
+#main.ng-enter {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(100%);
+}
+#main.ng-enter-active {
+  animation-name: leftRightPop;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes leftRightPop {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  } 55% {
+    opacity: 0.5;
+    transform: translateX(0%);
+  } 75% {
+    opacity: 0.9;
+    transform: translateX(50px);
+  } 100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+// main section animation css end
+
+// footer css start
+.footer-inner {
+  padding: 24px 25px 20px;
+  background: $secondry_color;
+  p {
+    color: #fff;
+    margin: 0;
+    font-size: 16px;
+  }
+}
+// footer css end
+
+// products start
+.all-products {
+  padding: 0 25px;
+  > ul {
+    @include ulDefault;
+    > li{
+      @include inlineBlock;
+
+    }
+  }
+  .product-main {
+    background-color: $primary_color;
+  }
+}
+
+// products end
