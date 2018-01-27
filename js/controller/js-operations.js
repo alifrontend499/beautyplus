@@ -9,7 +9,7 @@ app.controller('jsOperations',['$scope', function ($scope) {
     }
     headHeight();
     // console.log(headHeight());
-    jq(window).resize(function() {
+    jq(window).on('resize', 'scroll', function () {
       headHeight();
       // console.log(headHeight());
       // header_heght equal padding
@@ -17,7 +17,7 @@ app.controller('jsOperations',['$scope', function ($scope) {
         "padding-top": headHeight()
       });
       // header_heght equal margin
-      jq('.marg_padd').css({
+      jq('.head_marg').css({
         "padding-top": headHeight()
       });
     });
