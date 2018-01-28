@@ -21,6 +21,16 @@ $primary_font: ocr-fonts;
   display: table-cell;
   vertical-align: middle;
 }
+// inline style
+.parent {
+  display: block;
+  width: 100%;
+  .child {
+    display: inline-block;
+    margin-right: -4px;
+  }
+}
+
 // main heading
 .main-heading {
   font-family: $primary_font;
@@ -41,6 +51,7 @@ $primary_font: ocr-fonts;
   font-family: $primary_font;
   font-size: 20px;
   text-align: center;
+  color: $secondry_color;
 }
 
 // main styling
@@ -235,7 +246,7 @@ header {
   background: $secondry_color;
   p {
     color: #fff;
-    margin: 0; 
+    margin: 0;
     font-size: 16px;
   }
 }
@@ -248,7 +259,13 @@ header {
     @include ulDefault;
     > li{
       @include inlineBlock;
-
+      text-align: center;
+      &.big {
+        width: 33.3%;
+      }
+      &.small {
+        width: 16%;
+      }
     }
   }
   .product-main {

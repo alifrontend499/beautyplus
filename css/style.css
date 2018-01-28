@@ -16,10 +16,13 @@
 
 .ver-cen-inn { display: table-cell; vertical-align: middle; }
 
+.parent { display: block; width: 100%; }
+.parent .child { display: inline-block; margin-right: -4px; }
+
 .main-heading { font-family: ocr-fonts; font-size: 40px; text-align: center; margin: 20px 0 15px; }
 .main-heading:after { content: ''; display: table; height: 5px; width: 190px; background: #b8005f; margin: auto; }
 
-.main-small-heading { font-family: ocr-fonts; font-size: 20px; text-align: center; }
+.main-small-heading { font-family: ocr-fonts; font-size: 20px; text-align: center; color: #000; }
 
 * { box-sizing: border-box; }
 
@@ -69,7 +72,9 @@ header { position: fixed; z-index: 999; width: 100%; left: 0; }
 
 .all-products { padding: 0 25px; }
 .all-products > ul { list-style: none; margin: 0; padding-left: 0; }
-.all-products > ul > li { display: inline-block; margin-right: -4px; vertical-align: top; }
+.all-products > ul > li { display: inline-block; margin-right: -4px; vertical-align: top; text-align: center; }
+.all-products > ul > li.big { width: 33.3%; }
+.all-products > ul > li.small { width: 16%; }
 .all-products .product-main { background-color: #b8005f; }
 
 /*# sourceMappingURL=style.css.map */
