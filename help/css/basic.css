@@ -1,0 +1,105 @@
+/* BASIC STYLING */
+.nav-btn{
+  border-radius: 0;
+  border: 1px solid #afafaf;
+  font-size: 18px;
+  padding: 3px 10px;
+  cursor: pointer;
+  display: inline-block;
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+.nav-btn::first-letter{
+  text-transform: uppercase;
+}
+.nav-btn:hover,
+li.active .nav-btn{
+  background: #9f9f9f;
+  color: #fff;
+}
+.nav-btn:active{
+  background: #000;
+  color: #fff;
+}
+.card {
+    border: 1px solid #afafaf;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+.card.active{
+  border: 2px solid purple;
+}
+.head{
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #505050;
+  padding-bottom: 5px;
+}
+/* header */
+header{
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+header.fixed{
+  position: fixed;
+  width: 100%;
+  background: purple;
+  top: 0;
+}
+.header-inner{
+  padding: 10px 0;
+  border-bottom: 1px solid #bfbfbf;
+}
+header.fixed .header-inner{
+  border: transparent;
+}
+.header-inner .right{
+  text-align: right;
+}
+.header-inner .right h2{
+  margin: 0;
+}
+.header-inner .right p{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+header.fixed .header-inner .right p{
+  color: #fff;
+}
+header.fixed .header-inner .right h2{
+  color: #fff;
+}
+/* main section */
+.main-inner{
+  padding: 30px 15px;
+}
+.navigate-btns ul li{
+  vertical-align: top;
+}
+.navigate-to-menu{
+  margin-top: 30px;
+}
+.card p{
+  margin: 0;
+  font-size: 17px;
+}
+.card p span{
+  display: block;
+  background: #dfdfdf;
+  padding: 4px 10px;
+  margin-top: 5px;
+}
+
+.backToTop{
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0;
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+.backToTop.active{
+  opacity: 1;
+}

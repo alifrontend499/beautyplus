@@ -1,7 +1,6 @@
 // main routing
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
-
   $routeProvider.when('/home', {
     templateUrl: 'views/homepage.html',
     // all js operations
@@ -19,5 +18,4 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     redirectTo: '/home',
     controller: 'jsOperations'
   });
-
 }]);

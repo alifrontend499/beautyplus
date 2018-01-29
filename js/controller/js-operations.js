@@ -64,10 +64,24 @@ app.controller('jsOperations',['$scope', function ($scope) {
       // }, 1000);
     });
 
+    // add Class to menu
     jq('.header .left a').click(function() {
       jq(".main-menu > li").removeClass('active').eq(0).addClass('active');
       jq(this).off('click');
     });
+
+    // Slider shop now button
+    jq('.sliderShopNow').click(function (e) {
+      e.preventDefault();
+      var headerHeight = jq('.header').outerHeight();
+      var prodPos = jq('#products').offset().top;
+      var total = prodPos + headerHeight;
+
+
+    });
   };
   $scope.jsOperations();
+
+
+
 }]);

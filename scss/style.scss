@@ -1,5 +1,5 @@
 @import "components/_mixins.scss";
-@import "components/_flexbox.scss";
+@import "components/flexbox.scss";
 // fonts
 @font-face {
   font-family: "ocr-fonts";
@@ -10,7 +10,7 @@ $primary_color: #b8005f;
 // secondry color
 $secondry_color: #000;
 // primary font family
-$primary_font: ocr-fonts;
+$primary_font: "ocr-fonts";
 // vertical center
 .ver-cen-out {
   display: table;
@@ -23,13 +23,12 @@ $primary_font: ocr-fonts;
 }
 // inline style
 .parent {
-  display: block;
-  width: 100%;
-  .child {
-    display: inline-block;
-    margin-right: -4px;
+  @include tabb(true);
+  > .child {
+    @include inlineBlock;
   }
 }
+
 
 // main heading
 .main-heading {
@@ -255,18 +254,17 @@ header {
 // products start
 .all-products {
   padding: 0 25px;
-  > ul {
-    @include ulDefault;
-    > li{
-      @include inlineBlock;
-      text-align: center;
-      &.big {
-        width: 33.3%;
-      }
-      &.small {
-        width: 16%;
-      }
+  .left {
+    width: 70%;
+    > ul {
+        @include ulDefault;
+        > li {
+          @include inlineBlock;
+        }
     }
+  }
+  .right {
+    width: 30%;
   }
   .product-main {
     background-color: $primary_color;

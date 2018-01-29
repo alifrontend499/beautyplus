@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='shortcut icon' type='image/x-icon' href='images/logo.png'/>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Site Help</title>
+  </head>
+  <body>
+    <!-- back to top -->
+    <div class="backToTop">
+      <a href="#">
+        <img src="images/back-top-top.png" alt="" class="img-respo">
+      </a>
+    </div>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="header-inner grid-with-float-parent wid-100">
+          <div class="left grid-with-float-child wid-50">
+            <a href="#">
+              <img src="images/logo.png" alt=".img-respo">
+            </a>
+          </div>
+          <div class="right grid-with-float-child wid-50">
+            <h2><span style="color: #B8005F;">Beauty+</span> Help</h2>
+            <p>Use this if you need any help</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- MAIN SECTION -->
+    <div class="main-section">
+      <div class="container">
+        <div class="main-inner wid-100">
+          <div class="navigate-btns">
+            <h2 class="head">Navigation buttons</h2>
+            <ul class="list-inline wid-100">
+              <li>
+                <button type="button" class="btn nav-btn" dataNavi-id="parent">
+                  parent child
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn nav-btn" dataNavi-id="maiHed">
+                  main heading
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn nav-btn" dataNavi-id="maiHedSma">
+                  main small heading
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn nav-btn" dataNavi-id="inlineBlock">
+                  inlineBlock (mixin)
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navigate-to-menu">
+            <h2 class="head">Classes to use</h2>
+
+            <div class="card" id="parent">
+              <p>
+                for
+                <b>Parent</b> and
+                <b>Child</b>
+                <span>
+                  For parent:
+                  .parent <br>
+                  For child:
+                  .child
+                </span>
+              </p>
+            </div>
+
+            <div class="card" id="maiHed">
+              <p>
+                For <b>main heading</b>
+                <span>
+                  .main-heading
+                </span>
+              </p>
+            </div>
+
+            <div class="card" id="maiHedSma">
+              <p>
+                for <b>Main headng small</b>
+                <span>
+                  .main-small-heading
+                </span>
+              </p>
+            </div>
+
+            <div class="card" id="inlineBlock">
+              <p>
+                for <b>Inline block</b>
+                <span>
+                  @include inlineBlock (option) <br>
+                  option default is <b>Top</b>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery3.2.1.js"></script>
+    <script type="text/javascript" src="js/script-main.js"></script>
+  </body>
+</html>
